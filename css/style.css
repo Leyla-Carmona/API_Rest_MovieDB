@@ -1,0 +1,15 @@
+.ligthmode {
+  background-color: white;
+  color: black;
+}
+.ligthmode .navcolor {
+  background-color: #0C6C5C;
+}
+
+.darkmode {
+  background-color: black;
+  color: white;
+}
+.darkmode .navcolor {
+  background-color: #6C0C46;
+}/*# sourceMappingURL=style.css.map */
