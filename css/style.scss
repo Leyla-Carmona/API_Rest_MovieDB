@@ -14,6 +14,14 @@ body{
     font-family: 'Aboreto';
 }
 
+h1{
+    font-weight:200;
+}
+#title{
+    font-size: 1.65rem;
+    text-align: center;
+}
+
 footer {
     position: fixed; 
     font-size: 12px;
@@ -27,30 +35,35 @@ footer {
     }
   }
 
-  
-#crd{   
-    display: inline;
-    padding: 10px;
-    margin: 7px;
-}
 
 #menu-btn{
     padding: 2%;
     margin-top: 2px; 
     height: auto; 
-    filter: invert(); 
+    filter: invert(1); 
     z-index: 99;
 }
-#neC {
+
+#crd{   
     display: flex;
-    flex-wrap: wrap; 
-    width: auto;
-    padding: 20px;
-    margin: 0 auto;
+    height: 200px;
+    margin-left: 4%;
+    margin-right: 4%;
+    border: black solid 2px;
+    img{
+        width: 120px;
+    }
 }
 
-#trendingtitle{
-    margin: 100px;
+#neC {
+    justify-content: center;
+    display: flex; 
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px; /* Espacio entre elementos */
+    padding: 10px;
+    scrollbar-width: thin; /* Opcional: hace la barra de desplazamiento más delgada */
 }
 
 
