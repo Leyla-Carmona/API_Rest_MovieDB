@@ -1,5 +1,7 @@
 trends();
 upcoming();
+genders();
+
 async function mode(){
     let body = document.body.className;
     if(body == "darkmode")
@@ -62,5 +64,22 @@ async function upcoming(){
         crd.appendChild(img);
         neC.appendChild(crd);  
         document.body.appendChild(neC);
+    });
+}
+
+async function genders(){
+    const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=' + key );
+    const data = await res.json();
+    const menu = data.genres;
+    const title = document.createElement('h2') 
+    title.innerText = "Categories"
+    document.getElementById("menu").appendChild(title);    
+    title.className = 'menu-item';
+    document.querySelectorAll("mov").forEach(el => el.remove()); //Remove to avoid repeat the information         
+    menu.forEach(type => {
+        const crd = document.createElement('li') 
+        crd.className = 'menu-item';
+        crd.innerText = type.name;
+        document.getElementById("menu").appendChild(crd);
     });
 }
