@@ -18,6 +18,23 @@ footer p {
   margin-left: 35%;
 }
 
+#crd {
+  display: inline;
+  padding: 10px;
+  margin: 7px;
+}
+#crd img {
+  width: 100px;
+}
+
+#neC {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  padding: 20px;
+  margin: 0 auto;
+}
+
 .inactive {
   opacity: 100%;
   -webkit-backdrop-filter: blur(10px);
@@ -73,7 +90,6 @@ nav {
   padding: 2%;
   display: flex;
   justify-items: center;
-  position: absolute;
 }
 
 button {

@@ -15,3 +15,29 @@ const btn = document.getElementById("menu-btn");
 btn.addEventListener("click", () => {
     menu.classList.toggle("active"); // Alterna la clase "hidden"
 });
+
+async function trends(){
+    const res = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=' + key );
+    const data = await res.json();
+    const movies = data.results;
+    const neC = document.createElement('div');  //Nec for New Card
+    neC.id = "neC";         
+    const h1 = document.createElement('h1');       
+    h1.innerText = 'TRENDING MOVIES';
+    h1.id = "trendingtitle";     
+    document.body.appendChild(h1);
+    document.querySelectorAll("mov").forEach(el => el.remove()); //Remove to avoid repeat the information         
+    movies.slice(0,2).forEach(movie => {
+        const crd = document.createElement('div') //Crd card element        
+        const img = document.createElement('img');
+        img.src = 'https://image.tmdb.org/t/p/w300/' + movie.poster_path;
+
+        img.id = 'mov'
+        crd.id = 'crd'
+        crd.appendChild(img);
+        neC.appendChild(crd);  
+        document.body.appendChild(neC);
+    });
+}
+
+trends();

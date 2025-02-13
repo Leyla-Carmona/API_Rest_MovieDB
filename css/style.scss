@@ -27,6 +27,33 @@ footer {
     }
   }
 
+  
+#crd{   
+    display: inline;
+    padding: 10px;
+    margin: 7px;
+}
+
+#menu-btn{
+    padding: 2%;
+    margin-top: 2px; 
+    height: auto; 
+    filter: invert(); 
+    z-index: 99;
+}
+#neC {
+    display: flex;
+    flex-wrap: wrap; 
+    width: auto;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#trendingtitle{
+    margin: 100px;
+}
+
+
   .inactive{
     opacity: 100%;
     backdrop-filter: blur(10px);
@@ -81,7 +108,6 @@ nav{
     padding: 2%;
     display: flex;
     justify-items: center;
-    position: absolute;
 }
 
 button{
