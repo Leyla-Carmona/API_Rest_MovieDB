@@ -1,7 +1,8 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: "Aboreto";
+  overflow-x: hidden;
 }
 
 #navmenu {
@@ -43,7 +44,6 @@ footer p {
 }
 
 #menu {
-  display: block;
   color: white;
 }
 
@@ -79,9 +79,8 @@ footer p {
 .inactive {
   top: 0;
   left: 0;
-  opacity: 100%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4.8px);
+          backdrop-filter: blur(4.8px);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -113,6 +112,9 @@ footer p {
 }
 .lightmode .menu-item:hover {
   background-color: rgba(12, 108, 92, 0.6078431373);
+}
+.lightmode #navmenu {
+  background-color: rgba(12, 108, 92, 0.4823529412);
 }
 
 .darkmode {

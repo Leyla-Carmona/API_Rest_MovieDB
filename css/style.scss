@@ -8,10 +8,11 @@ $primarycolorB: #6C0C46;
 $secondarycolorB: black;
 $thirdcolorB: white;
 
-body{
+html, body{
     margin: 0;
     padding: 0;
     font-family: 'Aboreto';
+    overflow-x: hidden;
 }
 
 #navmenu{
@@ -50,8 +51,7 @@ footer {
     }
   }
 
-#menu{
-    display: block;    
+#menu{    
     color: $secondarycolorA;
 }
 
@@ -89,8 +89,7 @@ footer {
   .inactive{
     top: 0;
     left: 0;
-    opacity: 100%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4.8px);
     width: 100vw; 
     height: 100vh; 
     position:absolute;
@@ -121,6 +120,10 @@ footer {
     }
     .menu-item:hover {
         background-color: #0c6c5c9b; 
+    }
+    
+    #navmenu{
+        background-color: #0c6c5c7b;
     }
     
 }
