@@ -1,3 +1,6 @@
+export default async function handler(req, res) {
+    const key = process.env.API_KEY; // Aquí obtenemos la clave de entorno
+}
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
     headers:{
@@ -7,7 +10,7 @@ const api = axios.create({
         'api_key': key,
     }
 });
- 
+
 trends();
 upcoming();
 genders();
@@ -34,7 +37,6 @@ btn.addEventListener("click", () => {
 });
 
 async function trends(){
-    
     const {data } = await api('trending/movie/day');
     const movies = data.results;
     const neC = document.createElement('div');  //Nec for New Card
