@@ -1,6 +1,8 @@
 async function handler(req, res) {
-    const key = process.env.API_KEY; // Aquí obtenemos la clave de entorno
+    const key = process.env.API_KEY; 
+    console.log(key);
 }
+handler();
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
     headers:{
