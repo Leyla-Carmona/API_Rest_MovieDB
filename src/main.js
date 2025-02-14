@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+async function handler(req, res) {
     const key = process.env.API_KEY; // Aquí obtenemos la clave de entorno
 }
 const api = axios.create({
