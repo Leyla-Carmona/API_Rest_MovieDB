@@ -14,10 +14,18 @@ body{
     font-family: 'Aboreto';
 }
 
+#navmenu{
+    align-items: center;
+    font-size: 1.2rem;
+}
+#categoriestitle{
+    padding-left: 15%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .menu-item {
-    width: 100%;
-    height: auto; 
-    font-size: 1.5em;
+    font-size: 1.2em;
+    padding-left: 25%;
 }
 
 h1{
@@ -28,6 +36,7 @@ h1{
     font-size: 1.65rem;
     text-align: center;
 }
+
 footer {
     position: fixed; 
     font-size: 12px;
@@ -41,11 +50,9 @@ footer {
     }
   }
 
-
-
 #menu{
-    padding-left: 45px;   
-    padding-right: 5px;  
+    display: block;    
+    color: $secondarycolorA;
 }
 
 #menu-btn{
@@ -115,6 +122,7 @@ footer {
     .menu-item:hover {
         background-color: #0c6c5c9b; 
     }
+    
 }
 
 .darkmode{
@@ -127,11 +135,14 @@ footer {
         background-color: $primarycolorB;
     }
     #menu{
-        background-color: #6c0c46c2;
+        background-color: #6c0c468e;
         border-color: #6c0c46c2;
     }
     .menu-item:hover {
         background-color: #6c0c46c2; 
+    }
+    #navmenu{
+        background-color: #6c0c468e;
     }
 }
 

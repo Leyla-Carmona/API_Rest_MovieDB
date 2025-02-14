@@ -3,12 +3,15 @@ upcoming();
 genders();
 
 async function mode(){
+    const mode = document.getElementById('mode');
     let body = document.body.className;
     if(body == "darkmode")
     {
+        mode.innerText = 'Dark mode';
         document.body.className ="lightmode";
     } 
     else{
+        mode.innerText = 'Light mode';
         document.body.className ="darkmode";
     }
 }
@@ -71,15 +74,18 @@ async function genders(){
     const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=' + key );
     const data = await res.json();
     const menu = data.genres;
-    const title = document.createElement('h2') 
-    title.innerText = "Categories"
-    document.getElementById("menu").appendChild(title);    
-    title.className = 'menu-item';
+    const nav = document.createElement('nav');
+    const title = document.createElement('h1') 
+    title.innerText = "Categories";
+    title.id = 'categoriestitle';
+    nav.appendChild(title);    
+    nav.id = 'navmenu'
+    document.getElementById("menu").appendChild(nav);    
     document.querySelectorAll("mov").forEach(el => el.remove()); //Remove to avoid repeat the information         
-    menu.forEach(type => {
+    menu.forEach(type => {0
         const crd = document.createElement('li') 
         crd.className = 'menu-item';
-        crd.innerText = type.name;
+        crd.innerText = type.name;        
         document.getElementById("menu").appendChild(crd);
     });
 }
