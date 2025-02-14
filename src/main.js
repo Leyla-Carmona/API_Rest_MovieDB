@@ -1,8 +1,11 @@
-async function handler(req, res) {
+import axios from 'axios';
+
+export default async function handler(req, res) {
     const key = process.env.API_KEY; 
     console.log(key);
 }
 handler();
+
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
     headers:{
