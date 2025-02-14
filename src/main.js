@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export default async function handler(req, res) {
     const key = process.env.API_KEY; 
     console.log(key);
