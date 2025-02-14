@@ -1,4 +1,4 @@
-const api = axios.create({
+/*const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
     headers:{
         'Content-Type': 'application/json;charset=utf-8'
@@ -7,7 +7,7 @@ const api = axios.create({
         'api_key': key,
     }
 });
-
+ */
 trends();
 upcoming();
 genders();
@@ -34,8 +34,10 @@ btn.addEventListener("click", () => {
 });
 
 async function trends(){
-    const {data } = await api('trending/movie/day');
+    const { data } = await axios.get('/api/movies'); // Hacemos la solicitud a nuestro backend en Vercel
     const movies = data.results;
+        //    const {data } = await api('trending/movie/day');
+    //const movies = data.results;
     const neC = document.createElement('div');  //Nec for New Card
     neC.id = "neC";         
     const title = document.createElement('h1');    
