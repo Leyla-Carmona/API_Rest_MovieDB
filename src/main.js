@@ -8,13 +8,6 @@ const api = axios.create({
     }
 });
 
-const menu = document.getElementById("menu");
-const btn = document.getElementById("menu-btn");
-
-btn.addEventListener("click", () => {
-    menu.classList.toggle("active"); 
-});
-
 menugenders();
 
 async function mode(){
@@ -140,6 +133,34 @@ async function moviegender(id, name){
     });
 }
 
+findmovie('flow');
+
+async function findmovie(name) {
+    deletehomepage();  
+    deletegenderspage();
+    const { data } = await api('discover/movie?with_keywords='+ name);
+    const movies = data.results;
+    const title = document.createElement('h1');    
+    title.innerText = name;              
+    title.id = "genders"
+    const neC = document.createElement('div');  
+    document.body.appendChild(title);    
+    neC.id = "geC";       
+    movies.forEach(movie => {
+        const grd = document.createElement('div') //Crd card element        
+        const img = document.createElement('img');
+        img.src = 'https://image.tmdb.org/t/p/w300/' + movie.poster_path;
+        img.alt = movie.title;
+        img.id = 'mov'
+        grd.id = 'grd'
+        img.className = 'genders';
+        grd.className = 'genders';
+        neC.className = 'genders';
+        grd.appendChild(img);
+        neC.appendChild(grd);  
+        document.body.appendChild(neC);
+    });
+}
 async function deletehomepage(){
     document.querySelectorAll(".trends").forEach(el => el.remove());  
     document.querySelectorAll(".upcoming").forEach(el => el.remove());   
@@ -148,3 +169,10 @@ async function deletehomepage(){
 async function deletegenderspage() {
     document.querySelectorAll("h1, .genders").forEach(el => el.remove());  
 }
+
+const menu = document.getElementById("menu");
+const btn = document.getElementById("menu-btn");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("active"); 
+});

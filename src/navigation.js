@@ -15,7 +15,8 @@ function details() {
 
 }
 
-function searchpage() {
+function searchpage(data) {
+    location.hash='#search='+ data;
 }
 
 function genders(){
