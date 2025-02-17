@@ -3,20 +3,21 @@ window.addEventListener('hashchange', navigator, false);
 
 function navigator(){
 
-if(location.hash.startsWith('#details')){
- details();
-}else{
-    home();
-}
 }
 
 function home(){
-    trends();
-    upcoming();
+    location.hash = '';
+    hometrends();
+    homeupcoming();
 }
 
 function details() {
+
 }
 
 function searchpage() {
+}
+
+function genders(){
+    moviegender(id); 
 }

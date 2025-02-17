@@ -15,7 +15,7 @@ btn.addEventListener("click", () => {
     menu.classList.toggle("active"); 
 });
 
-genders();
+menugenders();
 
 async function mode(){
     const mode = document.getElementById('mode');
@@ -31,12 +31,13 @@ async function mode(){
     }
 }
 
-async function trends(){
+async function hometrends(){  
+    deletehomepage();  
+    deletegenderspage();
     const {data } = await api('trending/movie/day');
     const movies = data.results;    
     const neC = document.createElement('div');  //Nec for New Card    
     neC.id = "neC";        
-    document.querySelectorAll(".trends").forEach(el => el.remove());   
     const title = document.createElement('h1');    
     title.id = "title";            
     title.className = "trends"
@@ -58,12 +59,14 @@ async function trends(){
     });
 }
 
-async function upcoming(){
+async function homeupcoming(){    
+    deletehomepage();  
+    deletegenderspage(); 
     const {data} = await api('/movie/upcoming');
     const movies = data.results;
     const neC = document.createElement('div');  //Nec for New Card
     neC.id = "neC";       
-    document.querySelectorAll(".upcoming").forEach(el => el.remove()); //Remove to avoid repeat the information  
+//    document.querySelectorAll(".upcoming").forEach(el => el.remove()); //Remove to avoid repeat the information  
     const title = document.createElement('h1');    
     title.id = "title"; 
     title.className = "upcoming"           
@@ -84,9 +87,8 @@ async function upcoming(){
     });
 }
 
-async function genders(){
+async function menugenders(){
     const { data } = await api('genre/movie/list');
-
     const menu = data.genres;
     const nav = document.createElement('nav');
     const title = document.createElement('h1') 
@@ -101,5 +103,48 @@ async function genders(){
         crd.className = 'menu-item';
         crd.innerText = type.name;        
         document.getElementById("menu").appendChild(crd);
+        crd.addEventListener('click', () => { 
+            location.hash = '#category=' + type.id + '-' + type.name;
+            moviegender(type.id, type.name);
+        });
     });
+}
+
+async function details(){ 
+}
+
+async function moviegender(id, name){       
+    deletehomepage();  
+    deletegenderspage();
+    const { data } = await api('discover/movie?with_genres='+ id);
+    const movies = data.results;
+    const title = document.createElement('h1');    
+    title.innerText = name;              
+    title.id = "genders"
+    const neC = document.createElement('div');  
+    document.body.appendChild(title);    
+    neC.id = "geC";       
+    movies.forEach(movie => {
+        const grd = document.createElement('div') //Crd card element        
+        const img = document.createElement('img');
+        img.src = 'https://image.tmdb.org/t/p/w300/' + movie.poster_path;
+        img.alt = movie.title;
+        img.id = 'mov'
+        grd.id = 'grd'
+        img.className = 'genders';
+        grd.className = 'genders';
+        neC.className = 'genders';
+        grd.appendChild(img);
+        neC.appendChild(grd);  
+        document.body.appendChild(neC);
+    });
+}
+
+async function deletehomepage(){
+    document.querySelectorAll(".trends").forEach(el => el.remove());  
+    document.querySelectorAll(".upcoming").forEach(el => el.remove());   
+}
+
+async function deletegenderspage() {
+    document.querySelectorAll("h1, .genders").forEach(el => el.remove());  
 }
