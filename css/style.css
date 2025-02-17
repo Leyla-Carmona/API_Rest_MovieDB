@@ -105,10 +105,9 @@ input {
 }
 
 #grd {
-  margin-left: 7%;
+  margin-left: 5%;
   display: inline-flex;
   height: 165px;
-  width: 230px;
   border: black solid 2px;
   margin-bottom: 2%;
   border: black solid 2px;
@@ -116,8 +115,7 @@ input {
   align-content: space-around;
 }
 #grd img {
-  -o-object-fit: fill;
-     object-fit: fill;
+  width: 120px;
 }
 
 #neC {
