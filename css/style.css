@@ -5,6 +5,10 @@ html, body {
   overflow-x: hidden;
 }
 
+mov {
+  width: 100%;
+}
+
 #navmenu {
   align-items: center;
   font-size: 1.2rem;
@@ -116,6 +120,7 @@ input {
   border: black solid 2px;
   justify-content: flex-start;
   align-content: space-around;
+  background-color: white;
 }
 #grd img {
   width: 120px;

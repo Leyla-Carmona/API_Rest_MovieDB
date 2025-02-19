@@ -15,6 +15,9 @@ html, body{
     overflow-x: hidden;
 }
 
+mov{
+    width: 100%;
+}
 #navmenu{
     align-items: center;
     font-size: 1.2rem;
@@ -124,7 +127,8 @@ input{
     margin-bottom: 2%;
     border: black solid 2px;
     justify-content: flex-start;
-    align-content: space-around        ;
+    align-content: space-around;
+    background-color: white;
     img{        
       width: 120px;
     }

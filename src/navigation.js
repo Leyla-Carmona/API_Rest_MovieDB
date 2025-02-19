@@ -15,8 +15,9 @@ function details() {
 
 }
 
-function searchpage(data) {
-    location.hash='#search='+ data;
+function searchpage() {
+    location.hash='search='+ movie.value;
+    findmovie(movie.value);
 }
 
 function genders(){

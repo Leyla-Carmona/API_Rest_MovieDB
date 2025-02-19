@@ -133,23 +133,29 @@ async function moviegender(id, name){
     });
 }
 
-findmovie('flow');
-
-async function findmovie(name) {
+async function findmovie(movie) {
     deletehomepage();  
     deletegenderspage();
-    const { data } = await api('discover/movie?with_keywords='+ name);
-    const movies = data.results;
+    
+    const { data } = await api('search/movie?query=' + movie)
+    const search = data.results;
+    
     const title = document.createElement('h1');    
     title.innerText = name;              
     title.id = "genders"
     const neC = document.createElement('div');  
     document.body.appendChild(title);    
     neC.id = "geC";       
-    movies.forEach(movie => {
+    search.forEach(movie => {
         const grd = document.createElement('div') //Crd card element        
         const img = document.createElement('img');
         img.src = 'https://image.tmdb.org/t/p/w300/' + movie.poster_path;
+        img.onerror = function() {            
+            this.src = "https://img.freepik.com/foto-gratis/textura-cemento_1194-5269.jpg?t=st=1739922417~exp=1739926017~hmac=281ff04f3da32bf065b52ee3b3f387fe4fe7e35d0afc0df4ac16db92b89424b5&w=900";           
+            const text = document.createElement('h1');
+            text.innerText = movie.title;
+            img.appendChild(text);
+          }; 
         img.alt = movie.title;
         img.id = 'mov'
         grd.id = 'grd'
