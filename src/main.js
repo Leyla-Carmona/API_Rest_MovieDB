@@ -77,7 +77,14 @@ async function homeupcoming(){
         crd.appendChild(img);
         neC.appendChild(crd);  
         document.body.appendChild(neC);
+        //console.log(movie);
     });
+}
+
+async function details(id){ 
+    const {data} = await api('/movie/'+ id);
+    const movies = data.results;
+    console.log(movies);
 }
 
 async function menugenders(){
@@ -101,9 +108,6 @@ async function menugenders(){
             moviegender(type.id, type.name);
         });
     });
-}
-
-async function details(){ 
 }
 
 async function moviegender(id, name){       
@@ -164,9 +168,14 @@ async function findmovie(movie) {
         neC.className = 'genders';
         grd.appendChild(img);
         neC.appendChild(grd);  
-        document.body.appendChild(neC);
+        document.body.appendChild(neC);        
+       // img.addEventListener('click', () => {
+        details(movie.id);
+    //});
+        
     });
 }
+
 async function deletehomepage(){
     document.querySelectorAll(".trends").forEach(el => el.remove());  
     document.querySelectorAll(".upcoming").forEach(el => el.remove());   
@@ -178,6 +187,7 @@ async function deletegenderspage() {
 
 const menu = document.getElementById("menu");
 const btn = document.getElementById("menu-btn");
+
 
 btn.addEventListener("click", () => {
     menu.classList.toggle("active"); 

@@ -1,9 +1,7 @@
 window.addEventListener('DOMContentLoaded', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
-function navigator(){
-
-}
+home(); 
 
 function home(){
     location.hash = '';
