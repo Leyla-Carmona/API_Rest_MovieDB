@@ -122,6 +122,7 @@ async function moviegender(id, name){
     const neC = document.createElement('div');  
     document.body.appendChild(title);    
     neC.id = "geC";       
+    console.log(movies);
     movies.forEach(movie => {
         const grd = document.createElement('div') //Crd card element        
         const img = document.createElement('img');
@@ -144,7 +145,6 @@ async function findmovie(movie) {
     
     const { data } = await api.get('?path=search/movie?query=' + movie)
     const search = data.results;
-    console.log(search);
     const title = document.createElement('h1');    
     title.innerText = name;              
     title.id = "genders"
