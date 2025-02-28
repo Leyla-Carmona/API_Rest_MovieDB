@@ -1,12 +1,13 @@
 const api = axios.create({
-    baseURL: 'https://api.themoviedb.org/3/',
-    headers:{
-        'Content-Type': 'application/json;charset=utf-8'
-    },
-    params: {
-        'api_key': key,
+    baseURL: "/.netlify/functions/",
+    headers: {
+        "Content-Type": "application/json;charset=utf-8"
     }
 });
+
+api.get("getMovies")
+    .then(response => console.log(response.data))
+    .catch(error => console.error("Error:", error));
 
 menugenders();
 
