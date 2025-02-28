@@ -141,9 +141,10 @@ async function moviegender(id, name){
 async function findmovie(movie) {
     deletehomepage();  
     deletegenderspage();
+    
     const { data } = await api.get('?path=search/movie?query=' + movie)
     const search = data.results;
-    
+    console.log(search);
     const title = document.createElement('h1');    
     title.innerText = name;              
     title.id = "genders"
