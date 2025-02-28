@@ -5,7 +5,6 @@ const api = axios.create({
     }
 });
 
-// Obtener películas populares (funciona con la función Netlify)
 api.get("/")
     .then(response => console.log(response.data))
     .catch(error => console.error("Error:", error));
@@ -57,7 +56,7 @@ async function hometrends(){
 async function homeupcoming(){    
     deletehomepage();  
     deletegenderspage(); 
-    const {data} = await api('/movie/upcoming');
+    const {data} = await api.get('?path=movie/upcoming');
     const movies = data.results;
     const neC = document.createElement('div');  //Nec for New Card
     neC.id = "neC";       
@@ -84,13 +83,13 @@ async function homeupcoming(){
 }
 
 async function details(id){ 
-    const {data} = await api('/movie/'+ id);
+    const {data} = await api.get('?path=movie/'+ id);
     const movies = data.results;
     console.log(movies);
 }
 
 async function menugenders(){
-    const { data } = await api('genre/movie/list');
+    const { data } = await api.get('?path=genre/movie/list');
     const menu = data.genres;
     const nav = document.createElement('nav');
     const title = document.createElement('h1') 
@@ -115,7 +114,7 @@ async function menugenders(){
 async function moviegender(id, name){       
     deletehomepage();  
     deletegenderspage();
-    const { data } = await api('discover/movie?with_genres='+ id);
+    const { data } = await api.get('?path=discover/movie?with_genres='+ id);
     const movies = data.results;
     const title = document.createElement('h1');    
     title.innerText = name;              
@@ -142,8 +141,7 @@ async function moviegender(id, name){
 async function findmovie(movie) {
     deletehomepage();  
     deletegenderspage();
-    
-    const { data } = await api('search/movie?query=' + movie)
+    const { data } = await api.get('?path=search/movie?query=' + movie)
     const search = data.results;
     
     const title = document.createElement('h1');    
