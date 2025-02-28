@@ -88,7 +88,7 @@ async function details(id){
     console.log(movies);
 }
 
-async function menugenders(){
+async function menugenders(){    
     const { data } = await api.get('?path=genre/movie/list');
     const menu = data.genres;
     const nav = document.createElement('nav');
@@ -114,7 +114,8 @@ async function menugenders(){
 async function moviegender(id, name){       
     deletehomepage();  
     deletegenderspage();
-    const { data } = await api.get('?path=discover/movie?with_genres='+ id);
+    
+    const { data } = await api.get('discover/movie?with_genres='+ id);
     const movies = data.results;
     const title = document.createElement('h1');    
     title.innerText = name;              
@@ -122,7 +123,6 @@ async function moviegender(id, name){
     const neC = document.createElement('div');  
     document.body.appendChild(title);    
     neC.id = "geC";       
-    console.log(movies);
     movies.forEach(movie => {
         const grd = document.createElement('div') //Crd card element        
         const img = document.createElement('img');
