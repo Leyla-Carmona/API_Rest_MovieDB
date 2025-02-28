@@ -1,11 +1,12 @@
 const api = axios.create({
-    baseURL: "/.netlify/functions/",
+    baseURL: "/.netlify/functions/getMovies",
     headers: {
         "Content-Type": "application/json;charset=utf-8"
     }
 });
 
-api.get("getMovies")
+// Obtener películas populares (funciona con la función Netlify)
+api.get("/")
     .then(response => console.log(response.data))
     .catch(error => console.error("Error:", error));
 
@@ -28,7 +29,7 @@ async function mode(){
 async function hometrends(){  
     deletehomepage();  
     deletegenderspage();
-    const {data } = await api('trending/movie/day');
+    const {data } = await api.get('?path=trending/movie/day');
     const movies = data.results;    
     const neC = document.createElement('div');  //Nec for New Card    
     neC.id = "neC";        
