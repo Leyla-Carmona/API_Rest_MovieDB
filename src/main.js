@@ -78,7 +78,7 @@ async function homeupcoming(){
         crd.className = 'upcoming';        
         neC.className = 'upcoming';
         crd.appendChild(img);
-        neC.appendChild(link);
+        crd.appendChild(link);
         neC.appendChild(crd);  
 
         link.innerText = 'Click here'
