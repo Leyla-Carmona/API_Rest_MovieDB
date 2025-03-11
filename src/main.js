@@ -79,8 +79,9 @@ async function homeupcoming(){
         crd.appendChild(img);
         neC.appendChild(crd);  
         document.body.appendChild(neC);
-        img.onclick = details(movie.id);
-
+        img.onclick = function() {
+            details(movie.id);  // Llamamos a la función details cuando el usuario hace clic
+        };
     });
 }
 
