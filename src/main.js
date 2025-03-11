@@ -32,7 +32,7 @@ async function hometrends(){
     const movies = data.results;    
     const neC = document.createElement('div');  //Nec for New Card    
     neC.id = "neC";        
-    const title = document.createElement('h1');    
+    const title = document.getElementById('#trending');    
     title.innerText = 'TRENDING MOVIES';
     title.id = "title";            
     title.className = "trends"
@@ -62,7 +62,7 @@ async function homeupcoming(){
     const neC = document.createElement('div');  //Nec for New Card
     neC.id = "neC";       
     document.querySelectorAll(".upcoming").forEach(el => el.remove()); //Remove to avoid repeat the information  
-    const title = document.createElement('h1');    
+    const title = document.getElementById('#upcoming');    
     title.id = "title"; 
     title.className = "upcoming"           
     title.innerText = 'UPCOMING MOVIES';
