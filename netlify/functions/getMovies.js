@@ -1,5 +1,5 @@
 exports.handler = async (event) => {
-    const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.API_KEY;
     const path = event.queryStringParameters.path || "movie/popular"; // Ruta por defecto
     
     const API_URL = `https://api.themoviedb.org/3/${path}?api_key=${API_KEY}`;

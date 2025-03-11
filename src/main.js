@@ -32,13 +32,14 @@ async function hometrends(){
     const movies = data.results;    
     const neC = document.createElement('div');  //Nec for New Card    
     neC.id = "neC";        
-    const title = document.createElement('h1');    
+    const title = document.getElementById('trending');    
+    title.innerText = 'TRENDING MOVIES';
     title.id = "title";            
     title.className = "trends"
-    title.innerText = 'TRENDING MOVIES';
+    title.innerHTML = 'TRENDING MOVIES';
     document.body.appendChild(title);    
     movies.slice(0,10).forEach(movie => {
-        const crd = document.createElement('div') //Crd card element        
+        const crd = document.createElement('div') //Crd card element  
         const img = document.createElement('img');
         img.src = 'https://image.tmdb.org/t/p/w300/' + movie.poster_path;
         img.alt = movie.title;
