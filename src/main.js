@@ -85,6 +85,7 @@ async function homeupcoming(){
         link.onclick = function() {
             details(movie.id); 
         };
+        img.appendChild(link);
     });
 }
 
