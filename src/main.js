@@ -81,7 +81,7 @@ async function homeupcoming(){
         document.body.appendChild(neC);
         const details = document.createElement('a');
         details.href = '?path=movie/'+ movie.id;
-        img.onclick = details(id);
+        img.onclick = details(movie.id);
         img.appendChild(details);
         details.appendChild(img);
         neC.appendChild(details);
