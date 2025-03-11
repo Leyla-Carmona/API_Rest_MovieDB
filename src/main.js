@@ -82,8 +82,8 @@ async function homeupcoming(){
         const details = document.createElement('a');
         details.href = '?path=movie/'+ movie.id;
         img.onclick = details(id);
-        details.appendChild(img);
-        neC.appendChild(details);
+        img.appendChild(details);
+        //neC.appendChild(details);
 
     });
 }
