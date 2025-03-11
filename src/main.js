@@ -32,7 +32,7 @@ async function hometrends(){
     const movies = data.results;    
     const neC = document.createElement('div');  //Nec for New Card    
     neC.id = "neC";        
-    const title = document.getElementById('trending');    
+    const title = document.body.getElementById('trending');    
     title.innerText = 'TRENDING MOVIES';
     title.id = "title";            
     title.className = "trends"
