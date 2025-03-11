@@ -78,9 +78,10 @@ async function homeupcoming(){
         neC.className = 'upcoming';
         crd.appendChild(img);
         neC.appendChild(crd);  
-        document.body.appendChild(neC);
-        crd.onclick = function() {
-            details(movie.id);  
+        document.body.appendChild(neC);1
+        
+        img.onclick = function() {
+        details(movie.id);  
         };
     });
 }
