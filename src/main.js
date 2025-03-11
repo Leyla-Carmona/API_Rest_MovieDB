@@ -81,6 +81,7 @@ async function homeupcoming(){
         crd.appendChild(link);
         neC.appendChild(crd);  
 
+        link.innerText = 'Click here'
         link.href ='?path=movie/'+ movie.id;
         link.onclick = function() {
             details(movie.id); 
