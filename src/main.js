@@ -91,9 +91,8 @@ async function homeupcoming(){
 }
 
 async function details(id){ 
-    location.hash = '?path=movie/'+ id;
     deletehomepage();  
-    deletegenderspage();
+    location.hash = '?path=movie/'+ id;
     const {data} = await api.get('?path=movie/'+ id);
     const movies = data.results;
     console.log(movies);
