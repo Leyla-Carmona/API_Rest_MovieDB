@@ -78,8 +78,6 @@ async function homeupcoming(){
         crd.className = 'upcoming';        
         neC.className = 'upcoming';
         crd.appendChild(img);
-        crd.appendChild(link);
-        neC.appendChild(crd);  
 
         link.innerText = 'Click here'
         link.addEventListener('click', function(event) {
@@ -87,6 +85,8 @@ async function homeupcoming(){
             details(movie.id); 
         });
         
+        crd.appendChild(link);
+        neC.appendChild(crd);  
         document.body.appendChild(neC);
     });
 }
