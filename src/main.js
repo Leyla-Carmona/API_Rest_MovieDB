@@ -62,7 +62,7 @@ async function homeupcoming(){
     const neC = document.createElement('div');  //Nec for New Card
     neC.id = "neC";       
     document.querySelectorAll(".upcoming").forEach(el => el.remove()); //Remove to avoid repeat the information  
-    const title = document.getElementById('h1');    
+    const title = document.createElement('h1');    
     title.id = "title"; 
     title.className = "upcoming"           
     title.innerText = 'UPCOMING MOVIES';
