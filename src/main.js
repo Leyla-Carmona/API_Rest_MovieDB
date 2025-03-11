@@ -78,7 +78,7 @@ async function homeupcoming(){
         neC.className = 'upcoming';
         crd.appendChild(img);
         neC.appendChild(crd);  
-        document.body.appendChild(neC);1
+        document.body.appendChild(neC);
 
         const link = document.createElement('a');
         link.href ='?path=movie/'+ movie.id;
