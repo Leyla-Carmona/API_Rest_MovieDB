@@ -78,13 +78,13 @@ async function homeupcoming(){
         crd.className = 'upcoming';        
         neC.className = 'upcoming';
         crd.appendChild(img);
+        crd.appendChild(link);
         neC.appendChild(crd);  
 
         link.href ='?path=movie/'+ movie.id;
         link.onclick = function() {
             details(movie.id); 
         };
-        crd.appendChild(link);
         
         document.body.appendChild(neC);
     });
