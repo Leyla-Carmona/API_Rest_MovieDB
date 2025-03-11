@@ -83,12 +83,14 @@ async function homeupcoming(){
         details.href = '?path=movie/'+ movie.id;
         img.onclick = details(id);
         img.appendChild(details);
-        //neC.appendChild(details);
+        details.appendChild(img);
+        neC.appendChild(details);
 
     });
 }
 
 async function details(id){ 
+    location.hash = '?path=movie/'+ id;
     deletehomepage();  
     deletegenderspage();
     const {data} = await api.get('?path=movie/'+ id);
