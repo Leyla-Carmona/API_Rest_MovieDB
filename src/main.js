@@ -80,7 +80,7 @@ async function homeupcoming(){
         neC.appendChild(crd);  
         document.body.appendChild(neC);
         img.onclick = function() {
-            details(movie.id);  // Llamamos a la función details cuando el usuario hace clic
+            details(movie.id);  
         };
     });
 }
