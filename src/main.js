@@ -82,9 +82,10 @@ async function homeupcoming(){
         neC.appendChild(crd);  
 
         link.innerText = 'Click here'
-        link.onclick = function() {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
             details(movie.id); 
-        };
+        });
         
         document.body.appendChild(neC);
     });
