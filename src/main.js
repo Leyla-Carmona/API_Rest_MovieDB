@@ -79,10 +79,15 @@ async function homeupcoming(){
         crd.appendChild(img);
         neC.appendChild(crd);  
         document.body.appendChild(neC);
+        const details = document.createElement('a');
+        details.href = '?path=movie/'+ movie.id;
+        img.appendChild(details);
     });
 }
 
 async function details(id){ 
+    deletehomepage();  
+    deletegenderspage();
     const {data} = await api.get('?path=movie/'+ id);
     const movies = data.results;
     console.log(movies);
