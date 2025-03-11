@@ -70,6 +70,7 @@ async function homeupcoming(){
     movies.slice(0,10).forEach(movie => {
         const crd = document.createElement('div') //Crd card element        
         const img = document.createElement('img');
+        const link = document.createElement('a');
         img.src = 'https://image.tmdb.org/t/p/w300/' + movie.poster_path;
         img.id = 'mov'
         crd.id = 'crd'
@@ -78,14 +79,14 @@ async function homeupcoming(){
         neC.className = 'upcoming';
         crd.appendChild(img);
         neC.appendChild(crd);  
-        document.body.appendChild(neC);
 
-        const link = document.createElement('a');
         link.href ='?path=movie/'+ movie.id;
         link.onclick = function() {
             details(movie.id); 
         };
-        img.appendChild(link);
+        crd.appendChild(link);
+        
+        document.body.appendChild(neC);
     });
 }
 
