@@ -79,7 +79,7 @@ async function homeupcoming(){
         crd.appendChild(img);
         neC.appendChild(crd);  
         document.body.appendChild(neC);
-        img.onclick = function() {
+        crd.onclick = function() {
             details(movie.id);  
         };
     });
