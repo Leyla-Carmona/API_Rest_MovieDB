@@ -61,7 +61,7 @@ async function homeupcoming(){
     const movies = data.results;
     const neC = document.createElement('div');  //Nec for New Card
     neC.id = "neC";       
-//    document.querySelectorAll(".upcoming").forEach(el => el.remove()); //Remove to avoid repeat the information  
+    document.querySelectorAll(".upcoming").forEach(el => el.remove()); //Remove to avoid repeat the information  
     const title = document.createElement('h1');    
     title.id = "title"; 
     title.className = "upcoming"           
@@ -79,7 +79,6 @@ async function homeupcoming(){
         crd.appendChild(img);
         neC.appendChild(crd);  
         document.body.appendChild(neC);
-        //console.log(movie);
     });
 }
 
